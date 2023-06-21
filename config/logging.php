@@ -54,7 +54,7 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['single'],
+            'channels' => ['db', 'telegram'],
             'ignore_exceptions' => false,
         ],
 
@@ -125,6 +125,18 @@ return [
 
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
+        ],
+
+        'db' => [
+            'driver' => 'custom',
+            'via' => \AlphaDevTeam\Logger\Logging\AlphaDevLogger::class,
+            'level' => env('LOG_LEVEL', 'debug'),
+        ],
+
+        'telegram' => [
+            'driver' => 'custom',
+            'via' => \AlphaDevTeam\Logger\Logging\AlphaDevTelegramLogger::class,
+            'level' => env('LOG_LEVEL', 'debug'),
         ],
     ],
 
