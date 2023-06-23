@@ -9,7 +9,7 @@
         "alfa-dev-team/rest-api-responses": "^1.0",
         "alfa-dev-team/tools": "^1.0",
         "alpha-dev-team/logger": "^1.1",
-        "aqamarine/alphacruds": "^0.1.0",
+        "aqamarine/alphacruds": "^0.2.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.2",

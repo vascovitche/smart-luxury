@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bce4d82251618cc783825aaffe4d706a",
+    "content-hash": "96054870a6927ef7efe9b39336b36952",
     "packages": [
         {
             "name": "alfa-dev-team/rest-api-responses",
@@ -159,16 +159,16 @@
         },
         {
             "name": "aqamarine/alphacruds",
-            "version": "v0.1",
+            "version": "v0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Aqamarine228/AlphaCruds.git",
-                "reference": "213f51eed13b73bbf2e0ede86925fc9e43fbcfa9"
+                "reference": "a8625a02a7829a08b0a12246dac35283bafcb230"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Aqamarine228/AlphaCruds/zipball/213f51eed13b73bbf2e0ede86925fc9e43fbcfa9",
-                "reference": "213f51eed13b73bbf2e0ede86925fc9e43fbcfa9",
+                "url": "https://api.github.com/repos/Aqamarine228/AlphaCruds/zipball/a8625a02a7829a08b0a12246dac35283bafcb230",
+                "reference": "a8625a02a7829a08b0a12246dac35283bafcb230",
                 "shasum": ""
             },
             "require": {
@@ -215,9 +215,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Aqamarine228/AlphaCruds/issues",
-                "source": "https://github.com/Aqamarine228/AlphaCruds/tree/v0.1"
+                "source": "https://github.com/Aqamarine228/AlphaCruds/tree/v0.2"
             },
-            "time": "2023-03-03T11:32:26+00:00"
+            "time": "2023-03-08T15:01:19+00:00"
         },
         {
             "name": "brick/math",
