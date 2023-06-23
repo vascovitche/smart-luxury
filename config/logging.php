@@ -1,5 +1,8 @@
 <?php
 
+use AlphaDevTeam\Logger\Logging\AlphaDevLogger;
+use AlphaDevTeam\Logger\Logging\AlphaDevLogJson;
+use AlphaDevTeam\Logger\Logging\AlphaDevTelegramLogger;
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
@@ -30,10 +33,7 @@ return [
     |
     */
 
-    'deprecations' => [
-        'channel' => env('LOG_DEPRECATIONS_CHANNEL', 'null'),
-        'trace' => false,
-    ],
+    'deprecations' => env('LOG_DEPRECATIONS_CHANNEL', 'null'),
 
     /*
     |--------------------------------------------------------------------------
@@ -53,7 +53,7 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['db', 'telegram'],
+            'channels' => ['daily'],
             'ignore_exceptions' => false,
         ],
 
@@ -66,6 +66,7 @@ return [
         'daily' => [
             'driver' => 'daily',
             'path' => storage_path('logs/laravel.log'),
+            'tap' => [AlphaDevLogJson::class],
             'level' => env('LOG_LEVEL', 'debug'),
             'days' => 14,
         ],
@@ -81,11 +82,10 @@ return [
         'papertrail' => [
             'driver' => 'monolog',
             'level' => env('LOG_LEVEL', 'debug'),
-            'handler' => env('LOG_PAPERTRAIL_HANDLER', SyslogUdpHandler::class),
+            'handler' => SyslogUdpHandler::class,
             'handler_with' => [
                 'host' => env('PAPERTRAIL_URL'),
                 'port' => env('PAPERTRAIL_PORT'),
-                'connectionString' => 'tls://'.env('PAPERTRAIL_URL').':'.env('PAPERTRAIL_PORT'),
             ],
         ],
 
@@ -117,14 +117,15 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
+
         'db' => [
             'driver' => 'custom',
-            'via' => \AlphaDevTeam\Logger\Logging\AlphaDevLogger::class,
+            'via' => AlphaDevLogger::class,
             'level' => env('LOG_LEVEL', 'debug'),
         ],
         'telegram' => [
             'driver' => 'custom',
-            'via' => \AlphaDevTeam\Logger\Logging\AlphaDevTelegramLogger::class,
+            'via' => AlphaDevTelegramLogger::class,
             'level' => env('LOG_LEVEL', 'debug'),
         ],
     ],
