@@ -23,6 +23,15 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a href="{{ route('admin.property.index') }}" class="nav-link">
+                    <i class="fas fa-hotel nav-icon"></i>
+                    <p>
+                        Properties
+                    </p>
+                </a>
+            </li>
+
 
             <li class="nav-header">DEV</li>
 

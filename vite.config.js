@@ -34,6 +34,10 @@ export default defineConfig({
                     src: 'node_modules/@fortawesome/fontawesome-free/webfonts',
                     dest: '../modules/admin/plugins/fontawesome-free',
                 },
+                {
+                    src: 'node_modules/cropperjs',
+                    dest: '../modules/admin/plugins',
+                },
             ],
         }),
         laravel([
