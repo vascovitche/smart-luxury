@@ -13,6 +13,7 @@ class SubscriberFactory extends Factory
     {
         return [
             'name' => fake()->name(),
+            'surname' => fake()->lastName(),
             'email' => fake()->safeEmail(),
         ];
     }

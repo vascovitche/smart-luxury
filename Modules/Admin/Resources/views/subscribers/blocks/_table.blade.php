@@ -2,6 +2,7 @@
     <thead>
     <tr>
         <th>Name</th>
+        <th>Surname</th>
         <th>Email</th>
         <th class="text-center">Date</th>
     </tr>
@@ -11,6 +12,9 @@
         <tr>
             <td>
                 {{ $subscriber->name }}
+            </td>
+            <td>
+                {{ $subscriber->surname }}
             </td>
             <td>{{ $subscriber->email ?? '...' }}</td>
 
