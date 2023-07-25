@@ -2,6 +2,7 @@
 
 namespace Modules\ClientApi\Http\Controllers\Order;
 
+use App\Notifications\NewOrder;
 use Modules\ClientApi\Http\Controllers\ClientApiController;
 use Modules\ClientApi\Http\Requests\OrderRequest;
 use Modules\ClientApi\Models\Order;
@@ -12,7 +13,9 @@ class OrderController extends ClientApiController
     {
         $attributes = $request->validated();
 
-        Order::create($attributes);
+        $order = Order::create($attributes);
+
+        $order->notify(new NewOrder());
 
         return $this->respondSuccess([
             'message' => 'Order created successfully'
