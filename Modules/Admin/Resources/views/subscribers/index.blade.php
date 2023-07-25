@@ -2,12 +2,12 @@
 
 @section('title')
     <div class="d-flex">
-        Orders
+        Subscribers
     </div>
 @stop
 
 @section('breadcrumb')
-    <li class="breadcrumb-item active">Order{{ $rtrtr }}</li>
+    <li class="breadcrumb-item active">Subscribers</li>
 @stop
 
 @section('content')
@@ -16,7 +16,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body p-0">
-                    @include('admin::order.blocks._table')
+                    @include('admin::subscribers.blocks._table')
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 <?php
 
-use AlphaDevTeam\Logger\Logging\AlphaDevLogger;
+use AlphaDevTeam\Logger\Logging\AlphaDevDBLogger;
 use AlphaDevTeam\Logger\Logging\AlphaDevLogJson;
 use AlphaDevTeam\Logger\Logging\AlphaDevTelegramLogger;
 use Monolog\Handler\NullHandler;
@@ -53,7 +53,7 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['daily'],
+            'channels' => ['daily', 'telegram', 'db'],
             'ignore_exceptions' => false,
         ],
 
@@ -65,7 +65,7 @@ return [
 
         'daily' => [
             'driver' => 'daily',
-            'path' => storage_path('logs/laravel.log'),
+            'path' => storage_path('logs/daily/laravel.log'),
             'tap' => [AlphaDevLogJson::class],
             'level' => env('LOG_LEVEL', 'debug'),
             'days' => 14,
@@ -120,7 +120,7 @@ return [
 
         'db' => [
             'driver' => 'custom',
-            'via' => AlphaDevLogger::class,
+            'via' => AlphaDevDBLogger::class,
             'level' => env('LOG_LEVEL', 'debug'),
         ],
         'telegram' => [
