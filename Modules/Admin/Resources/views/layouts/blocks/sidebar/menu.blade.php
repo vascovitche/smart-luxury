@@ -23,6 +23,15 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a href="{{ route('admin.subscribers.index') }}" class="nav-link">
+                    <i class="far fa-newspaper nav-icon"></i>
+                    <p>
+                        Subscribers
+                    </p>
+                </a>
+            </li>
+
 
             <li class="nav-header">DEV</li>
 
