@@ -5,6 +5,7 @@
         <th>Surname</th>
         <th>Email</th>
         <th class="text-center">Date</th>
+        <th class="text-center">Actions</th>
     </tr>
     </thead>
     <tbody>
@@ -19,6 +20,10 @@
             <td>{{ $subscriber->email ?? '...' }}</td>
 
             <td class="text-center">{{ $subscriber->created_at->format('M d, Y') }}</td>
+
+            <td>
+                @include('admin::subscribers.blocks._actions')
+            </td>
         </tr>
     @endforeach
     </tbody>

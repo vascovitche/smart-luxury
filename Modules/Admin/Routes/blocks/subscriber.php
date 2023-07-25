@@ -5,4 +5,5 @@ use Modules\Admin\Http\Controllers\Subscriber\SubscriberController;
 
 Route::controller(SubscriberController::class)->prefix('subscribers')->name('subscribers.')->group(function () {
     Route::get('/', 'index')->name('index');
+    Route::delete('/{subscriber}', 'destroy')->name('destroy');
 });

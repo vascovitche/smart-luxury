@@ -13,10 +13,17 @@ class SubscriberController extends ClientApiController
     {
         $attributes = $request->validated();
 
-        Subscriber::create($attributes);
-        Newsletter::subscribe($attributes['email']);
+        Subscriber::updateOrCreate([
+            'email' => $attributes['email']
+        ], [
+            'name' => $attributes['name'],
+            'surname' => $attributes['surname'],
+        ]);
 
-        dd($attributes['email']);
+        Newsletter::subscribeOrUpdate($attributes['email'], [
+            'FNAME' => $attributes['name'],
+            'LNAME' => $attributes['surname'],
+        ]);
 
         return $this->respondSuccess([
             'message' => 'Subscriber created successfully'
