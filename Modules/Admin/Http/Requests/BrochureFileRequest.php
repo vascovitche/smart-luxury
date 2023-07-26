@@ -13,7 +13,7 @@ class BrochureFileRequest extends FormRequest
             'brochure' => [
                 'required',
                 'file',
-                'mimetypes:application/pdf,image/jpeg,image/png,application/zip'
+                'mimetypes:application/pdf'
             ]
         ];
     }
