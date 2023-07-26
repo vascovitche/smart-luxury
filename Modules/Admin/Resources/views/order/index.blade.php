@@ -7,7 +7,7 @@
 @stop
 
 @section('breadcrumb')
-    <li class="breadcrumb-item active">Order{{ $rtrtr }}</li>
+    <li class="breadcrumb-item active">Orders</li>
 @stop
 
 @section('content')

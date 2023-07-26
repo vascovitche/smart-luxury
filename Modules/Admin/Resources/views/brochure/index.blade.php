@@ -1,11 +1,13 @@
 @extends('admin::layouts.master')
 
 @section('title')
-    Users
+    <div class="d-flex">
+        Brochure
+    </div>
 @stop
 
 @section('breadcrumb')
-    <li class="breadcrumb-item active">Users</li>
+    <li class="breadcrumb-item active">Brochure</li>
 @stop
 
 @section('content')
@@ -14,10 +16,9 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    @include('admin::users.blocks.table')
+                    @include('admin::brochure.blocks._actions')
                 </div>
             </div>
         </div>
     </div>
-
 @stop

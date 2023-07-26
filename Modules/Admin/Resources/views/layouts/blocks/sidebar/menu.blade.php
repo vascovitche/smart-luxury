@@ -3,10 +3,10 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
             <li class="nav-item">
-                <a href="{{ route('admin.orders.index') }}" class="nav-link">
-                    <i class="fas fa-user nav-icon"></i>
+                <a href="{{ route('admin.brochure.index') }}" class="nav-link">
+                    <i class="fab fa-font-awesome-flag nav-icon"></i>
                     <p>
-                        Users
+                        Brochure
                     </p>
                 </a>
             </li>

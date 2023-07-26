@@ -31,19 +31,6 @@ class AuthController extends AdminController
         Auth::guard('admin')->login($admin);
 
         return redirect()->route('admin.home');
-
-//        $fields = $this->validate(request(), [
-//            'email' => 'required|email',
-//            'password' => 'required',
-//        ]);
-//
-//        if (auth()->guard('admin')->attempt($fields)) {
-//            request()->session()->regenerate();
-//
-//            return redirect()->route('admin.home');
-//        }
-//
-//        return back()->with('error', 'Something went wrong.');
     }
 
 }
