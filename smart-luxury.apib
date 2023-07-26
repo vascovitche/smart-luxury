@@ -1,0 +1,50 @@
+FORMAT: 1A
+HOST: https://smart-luxury.com/api/v1/
+
+# smart luxury
+
+# This is the API documentation for SMART LUXURY project, which provides endpoints for accessing data.
+
+## Order [/orders]
+
+### Make Order [POST]
+
+- Request (multipart/form-data)
+
+    - Attributes
+        - name (string, required) - name
+        - phone_number (number, required) - phone number
+        - email (string, optional) - email
+
+- Response 200 (application/json)
+
+        {
+            "response": "Order created successfully.",
+            "success": true
+        }
+
+
+## Subscribe [/subscribers]
+
+### Subscribe [POST]
+
+- Request (multipart/form-data)
+
+    - Attributes
+        - name (string, required) - name
+        - surname (string, required) - surname
+        - email (string, required) - email
+
+- Response 200 (application/json)
+
+        {
+            "response": "Subscriber created successfully.",
+            "success": true
+        }
+
+
+## Brochure [/brochure]
+
+### Download brochure [GET]
+
+- Response 200 (application/pdf)

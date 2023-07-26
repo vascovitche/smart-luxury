@@ -25,9 +25,7 @@ class SubscriberController extends ClientApiController
             'LNAME' => $attributes['surname'],
         ]);
 
-        return $this->respondSuccess([
-            'message' => 'Subscriber created successfully'
-        ]);
+        return $this->respondSuccess('Subscriber created successfully');
     }
 
 }

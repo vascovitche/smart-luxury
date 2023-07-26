@@ -17,9 +17,7 @@ class OrderController extends ClientApiController
 
         $order->notify(new NewOrder());
 
-        return $this->respondSuccess([
-            'message' => 'Order created successfully'
-        ]);
+        return $this->respondSuccess('Order created successfully');
 
     }
 
