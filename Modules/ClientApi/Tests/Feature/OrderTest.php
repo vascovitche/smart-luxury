@@ -14,6 +14,7 @@ class OrderTest extends ApiTestCase
             'name' => $this->faker->name,
             'email' => $this->faker->email,
             'phone_number' => $this->faker->phoneNumber,
+            'flat_id' => 'P401'
         ];
 
         $response = $this->postJson('/api/v1/orders', $data);
@@ -24,6 +25,28 @@ class OrderTest extends ApiTestCase
             'name' => $data['name'],
             'email' => $data['email'],
             'phone_number' => $data['phone_number'],
+            'flat_id' => $data['flat_id'],
+            'status' => OrderStatus::NEW
+        ]);
+    }
+
+    public function test_create_order_without_id()
+    {
+        $data = [
+            'name' => $this->faker->name,
+            'email' => $this->faker->email,
+            'phone_number' => $this->faker->phoneNumber,
+        ];
+
+        $response = $this->postJson('/api/v1/orders', $data);
+
+        $response->assertOk();
+
+        $this->assertDatabaseHas('orders', [
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'phone_number' => $data['phone_number'],
+            'flat_id' => null,
             'status' => OrderStatus::NEW
         ]);
     }

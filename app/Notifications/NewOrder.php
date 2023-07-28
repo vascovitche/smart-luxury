@@ -9,7 +9,7 @@ class NewOrder extends Notification
 {
     public function via($notifiable)
     {
-        return ["telegram"];
+        return ['telegram'];
     }
 
     public function toTelegram($notifiable)
@@ -17,7 +17,8 @@ class NewOrder extends Notification
         $message = "New order from " . $notifiable->name .
             ".\nContacts: " .
             "\nPhone: " . $notifiable->phone_number .
-            "\nEmail: " . $notifiable->email;
+            "\nEmail: " . $notifiable->email .
+            "\nFlat id: " . $notifiable->flat_id;
 
         return TelegramMessage::create()
             ->to(config('services.telegram-bot-api.chat_id'))

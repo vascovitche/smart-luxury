@@ -18,6 +18,7 @@ class OrderFactory extends Factory
             'name' => fake()->name(),
             'email' => fake()->safeEmail(),
             'phone_number' => fake()->e164PhoneNumber,
+            'flat_id' => fake()->randomLetter() . fake()->numberBetween(1, 10),
         ];
     }
 

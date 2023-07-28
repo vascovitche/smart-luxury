@@ -13,6 +13,7 @@ class OrderRequest extends FormRequest
             'name' => ['required', 'string', 'max:255'],
             'phone_number' => ['required', new PhoneNumberRule()],
             'email' => ['nullable', 'email'],
+            'flat_id' => ['nullable', 'string', 'max:255'],
         ];
     }
 

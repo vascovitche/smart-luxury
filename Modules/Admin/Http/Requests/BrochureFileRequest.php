@@ -3,7 +3,6 @@
 namespace Modules\Admin\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rules\File;
 
 class BrochureFileRequest extends FormRequest
 {

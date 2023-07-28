@@ -5,6 +5,7 @@
         <th class="text-center">Phone</th>
 
         <th class="text-center">Email</th>
+        <th class="text-center">Flat ID</th>
         <th class="text-center">Status</th>
         <th class="text-center">Date</th>
 
@@ -20,6 +21,7 @@
 
             <td class="text-center">{{ $order->phone_number ?? '...' }}</td>
             <td class="text-center">{{ $order->email ?? '...' }}</td>
+            <td class="text-center">{{ $order->flat_id ?? '...' }}</td>
             <td class="text-center">
                 <span
                         class="badge {{ $order->status == \App\Enums\OrderStatus::DONE ? 'bg-success' : ($order->status == \App\Enums\OrderStatus::AT_WORK ? 'bg-warning' : 'bg-light') }}">

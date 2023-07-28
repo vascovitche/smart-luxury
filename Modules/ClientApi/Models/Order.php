@@ -4,6 +4,6 @@ namespace Modules\ClientApi\Models;
 
 class Order extends \App\Models\Order
 {
-    protected $fillable = ['name', 'email', 'phone_number'];
+    protected $fillable = ['name', 'email', 'phone_number', 'flat_id'];
 
 }
