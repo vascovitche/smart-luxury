@@ -9,5 +9,5 @@ php artisan storage:link
 ## Run npm:
 
 ```shell
-npm run dev
+npm run build
 ```

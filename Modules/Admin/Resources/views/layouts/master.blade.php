@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="{{ Vite::asset('node_modules/admin-lte/dist/img/AdminLTELogo.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('modules/admin/plugins/admin-lte/dist/img/AdminLTELogo.png') }}">
     <title>Project</title>
 
-    @vite('node_modules/admin-lte/dist/css/alt/adminlte.light.css')
-    @vite('node_modules/@fortawesome/fontawesome-free/css/all.min.css')
+    <link rel="stylesheet" href="{{ asset('modules/admin/plugins/admin-lte/dist/css/alt/adminlte.light.css') }}">
+    <link rel="stylesheet" href="{{ asset('modules/admin/plugins/fontawesome-free/css/all.min.css') }}">
 
     @stack('style')
 
