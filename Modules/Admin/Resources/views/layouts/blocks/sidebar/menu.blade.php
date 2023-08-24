@@ -32,6 +32,14 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a href="{{ route('admin.amo.index') }}" class="nav-link">
+                    <i class="fas fa-cog nav-icon"></i>
+                    <p>
+                        CRM
+                    </p>
+                </a>
+            </li>
 
             <li class="nav-header">DEV</li>
 
